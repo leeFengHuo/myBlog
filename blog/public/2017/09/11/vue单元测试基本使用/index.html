@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Vue单元测试基本使用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="单元测试，在维基百科中解释是：在计算机编程中，单元测试（英语：Unit Testing）又称为模块测试, 是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。 程序单元是应用的最小可测试部件。 在过程化编程中，一个单元就是单个程序、函数、过程等；对于面向对象编程，最小单元就是方法，包括基类（超类）、抽象类、或者派生类（子类）中的方法。而vue单元测试在我看来就是为了隔离应用部件并证明这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue单元测试基本使用">
+<meta property="og:url" content="http://yoursite.com/2017/09/11/vue单元测试基本使用/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="单元测试，在维基百科中解释是：在计算机编程中，单元测试（英语：Unit Testing）又称为模块测试, 是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。 程序单元是应用的最小可测试部件。 在过程化编程中，一个单元就是单个程序、函数、过程等；对于面向对象编程，最小单元就是方法，包括基类（超类）、抽象类、或者派生类（子类）中的方法。而vue单元测试在我看来就是为了隔离应用部件并证明这">
+<meta property="og:image" content="http://yoursite.com/2017/09/11/images/error.png">
+<meta property="og:image" content="http://yoursite.com/2017/09/11/images/success.png">
+<meta property="og:image" content="http://yoursite.com/2017/09/11/images/file.png">
+<meta property="og:image" content="http://yoursite.com/2017/09/11/images/coverage1.png">
+<meta property="og:image" content="http://yoursite.com/2017/09/11/images/coverage2.png">
+<meta property="og:image" content="http://yoursite.com/2017/09/11/images/coverage3.png">
+<meta property="og:image" content="http://yoursite.com/2017/09/11/images/coverage4.png">
+<meta property="og:image" content="http://yoursite.com/2017/09/11/images/code_yellow.png">
+<meta property="og:image" content="http://yoursite.com/2017/09/11/images/code_red.png">
+<meta property="og:updated_time" content="2017-09-11T10:16:29.095Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue单元测试基本使用">
+<meta name="twitter:description" content="单元测试，在维基百科中解释是：在计算机编程中，单元测试（英语：Unit Testing）又称为模块测试, 是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。 程序单元是应用的最小可测试部件。 在过程化编程中，一个单元就是单个程序、函数、过程等；对于面向对象编程，最小单元就是方法，包括基类（超类）、抽象类、或者派生类（子类）中的方法。而vue单元测试在我看来就是为了隔离应用部件并证明这">
+<meta name="twitter:image" content="http://yoursite.com/2017/09/11/images/error.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue单元测试基本使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/11/vue单元测试基本使用/" class="article-date">
+  <time datetime="2017-09-10T16:00:00.000Z" itemprop="datePublished">2017-09-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue单元测试基本使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>单元测试，在维基百科中解释是：在计算机编程中，单元测试（英语：Unit Testing）又称为模块测试, 是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。 程序单元是应用的最小可测试部件。 在过程化编程中，一个单元就是单个程序、函数、过程等；对于面向对象编程，最小单元就是方法，包括基类（超类）、抽象类、或者派生类（子类）中的方法。而vue单元测试在我看来就是为了隔离应用部件并证明这些单个vue组件是正确的，以在开发过程的早期就能发现问题，提高代码质量和可维护性，从而有效的减少维护成本，降低 Bug 率。</p>
+<hr>
+<h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1.准备工作"></a>1.准备工作</h2><p>整理一下配置测试环境所需要的依赖：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">karma <span class="comment">//test runner，提供测试所需的浏览器环境、监测代码改变自动重测、整合持续集成等功能</span></div><div class="line">phantomjs-prebuilt <span class="comment">//phantomjs，在终端运行的浏览器虚拟机，也可以直接使用了chrome</span></div><div class="line">mocha <span class="comment">//test framework，测试框架，运行测试</span></div><div class="line">chai <span class="comment">//assertion framework, 断言库，提供多种断言，与测试框架配合使用</span></div><div class="line">sinon <span class="comment">//测试辅助工具，提供 spy、stub、mock 三种测试手段，帮助捏造特定场景</span></div><div class="line">karma-webpack <span class="comment">//karma 中的 webpack 插件， 连接karma和webpack的桥梁。不经过webpack编译命令是文件是无法独立运行的，karma需要了解你的webpack配置，决定如何处理你的测试文件。</span></div><div class="line">karma-mocha <span class="comment">//在karma 中使用 mocha测试框架的 插件</span></div><div class="line">karma-sinon-chai <span class="comment">//在karma 中使用 sinon-chai断言库的 插件</span></div><div class="line">sinon-chai <span class="comment">//karma 中的 chai 插件</span></div><div class="line">karma-sourcemap-loader <span class="comment">//karma 中的 sourcemap 插件</span></div><div class="line">karma-phantomjs-launcher <span class="comment">//karma 中的 phantomjs 插件,如使用chrome为测试浏览器则为karma-chrome-launcher</span></div><div class="line">karma-spec-reporter <span class="comment">//在终端输出测试结果的插件</span></div><div class="line">karma-coverage <span class="comment">//代码覆盖率统计工具coverage</span></div></pre></td></tr></table></figure></p>
+<p>要在karma使用某个测试工具都需要安装karma对应的插件。<br>相关配置安装一波<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i karma mocha chai sinon karma-webpack karma-mocha karma-sinon-chai sinon-chai karma-sourcemap-loader karma-chrome-launcher karma-spec-reporter karma-coverage --save-dev</div></pre></td></tr></table></figure></p>
+<p>安装好了，可以先跑一下看看是否安装正确，到package.json的scripts中注册一个命令：”unit”: “cross-env BABEL_ENV=test karma start karma.conf.js –single-run”，然后运行。</p>
+<h2 id="2-配置-karma"><a href="#2-配置-karma" class="headerlink" title="2. 配置 karma"></a>2. 配置 karma</h2><p>按照 karma 的文档，运行：karma init。因为karma是要在命令中运行的，所以需要先安装karma-cli：npm install -g karma-cli。这时可以选择使用的测试框架、是否使用 require.js、浏览器环境、测试脚本存放位置、是否有需要 ignore 的文件，等等。选择完毕之后，该项目根目录下生成名为 karma.conf.js 文件。<br>修改Karma配置：<br>打开karma.config.js文件，引入webpack，并配置webpack加载 .js、.vue、babel；这和普通的 webpack 配置没什么差别，除了 entry 之外，resolve、各种 loader 等等都需要加上.<br>最终的karma配置如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Karma configuration</span></div><div class="line"><span class="keyword">var</span> webpack= <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> path= <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">config</span>) </span>&#123;</div><div class="line">    config.set(&#123;</div><div class="line">        <span class="comment">// 文件匹配的起始路径</span></div><div class="line">        basePath: <span class="string">''</span>,</div><div class="line">        <span class="comment">// 测试框架</span></div><div class="line">        <span class="comment">// available frameworks: 	https://npmjs.org/browse/keyword/karma-adapter</span></div><div class="line">        frameworks: [<span class="string">'mocha'</span>,<span class="string">'chai'</span>],</div><div class="line">        <span class="comment">// 要测试的目标文件</span></div><div class="line">        files: [</div><div class="line">            <span class="string">'test/unit/**/*.spec.js'</span></div><div class="line">        ],</div><div class="line">        <span class="comment">// 忽略的文件</span></div><div class="line">        exclude: [</div><div class="line">        ],</div><div class="line">        <span class="comment">// 预处理文件</span></div><div class="line">        <span class="comment">// available preprocessors: 	https://npmjs.org/browse/keyword/karma-preprocessor</span></div><div class="line">        preprocessors: &#123;</div><div class="line">            <span class="string">'test/unit/**/*.spec.js'</span>:[<span class="string">'webpack'</span>,<span class="string">'coverage'</span>]</div><div class="line">        &#125;,</div><div class="line">        <span class="comment">//karma的watch模式,即自动化测试</span></div><div class="line">        autoWatch:<span class="literal">true</span>,</div><div class="line">        <span class="comment">// 测试报告处理</span></div><div class="line">        <span class="comment">// available reporters: 		https://npmjs.org/browse/keyword/karma-reporter</span></div><div class="line">        reporters: [<span class="string">'spec'</span>,<span class="string">'progress'</span>,<span class="string">'coverage'</span>],</div><div class="line">        /测试覆盖率文件输出</div><div class="line">        coverageReporter: &#123;</div><div class="line">            type: <span class="string">'html'</span>,</div><div class="line">            dir: <span class="string">'test/coverage/'</span></div><div class="line">        &#125;,</div><div class="line">        <span class="comment">// 服务器端口</span></div><div class="line">        port: <span class="number">9876</span>,</div><div class="line">        <span class="comment">// 输出着色</span></div><div class="line">        colors: <span class="literal">true</span>,</div><div class="line">        <span class="comment">// 日志级别</span></div><div class="line">        <span class="comment">// LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG</span></div><div class="line">        logLevel: config.LOG_INFO,</div><div class="line">        <span class="comment">//监控文件更改</span></div><div class="line">        autoWatch: <span class="literal">true</span>,</div><div class="line">        <span class="comment">// 要启动的测试浏览器</span></div><div class="line">        <span class="comment">// available browser launchers: 		https://npmjs.org/browse/keyword/karma-launcher</span></div><div class="line">        browsers: [<span class="string">'Chrome'</span>],</div><div class="line">        <span class="comment">// true: 自动运行测试并退出</span></div><div class="line">        <span class="comment">// false: 监控文件持续测试</span></div><div class="line">        singleRun: <span class="literal">false</span>,</div><div class="line">        <span class="comment">// Concurrency level</span></div><div class="line">        <span class="comment">// how many browser should be started simultaneous</span></div><div class="line">        concurrency: <span class="literal">Infinity</span>,</div><div class="line">        <span class="comment">// 超时处理，6s内没有捕获浏览器将终止进程</span></div><div class="line">        <span class="comment">// captureTimeout: 6000</span></div><div class="line">        <span class="comment">// 手动引入 karma 的各项插件，如果不显式引入，karma 也会自动寻找 karma- 开	头的插件并自动引入</span></div><div class="line">        <span class="comment">//plugins: [],</span></div><div class="line">        <span class="comment">// webpack</span></div><div class="line">        webpack: &#123;</div><div class="line">            <span class="built_in">module</span>: &#123;</div><div class="line">                loaders: [</div><div class="line">                &#123;</div><div class="line">                    test: <span class="regexp">/\.vue$/</span>,</div><div class="line">                    loader: <span class="string">'vue'</span></div><div class="line">                &#125;,&#123;</div><div class="line">                    test: <span class="regexp">/\.(sass|scss|css)$/</span>,</div><div class="line">                    loaders: [<span class="string">'style'</span>, <span class="string">'css'</span>, <span class="string">'sass'</span>]</div><div class="line">                &#125;,&#123;</div><div class="line">                    test: <span class="regexp">/\.(woff|woff2|eot|ttf|svg)/</span>,</div><div class="line">                    loader: <span class="string">'file?name=fonts/[name].[ext]'</span></div><div class="line">                &#125;,&#123;</div><div class="line">                    test: <span class="regexp">/algeria\.json/</span>,</div><div class="line">                    loader: <span class="string">'file?name=[name].[ext]'</span></div><div class="line">                &#125;,&#123;</div><div class="line">                    test: <span class="regexp">/sigma/</span>,</div><div class="line">                    loader: <span class="string">'imports-loader?this=&gt;window'</span></div><div class="line">                &#125;,&#123;</div><div class="line">                    test: <span class="regexp">/\.js$/</span>,</div><div class="line">                    loader: <span class="string">'babel?cacheDirectory=.babel_cache'</span>,</div><div class="line">                    exclude:<span class="regexp">/libs|node_modules|vue\/dist|vue-router\/|vue-loader\/|vue-hot-reload-api\//</span></div><div class="line">                &#125;]</div><div class="line">            &#125;,</div><div class="line">            vue: &#123;</div><div class="line">                loaders: &#123;</div><div class="line">                    js: <span class="string">'babel?cacheDirectory=.babel_cache'</span>,</div><div class="line">                    css: <span class="string">'vue-style!css'</span>,</div><div class="line">                    sass: <span class="string">'vue-style!css!sass'</span>,</div><div class="line">                    scss: <span class="string">'vue-style!css!sass'</span></div><div class="line">                &#125;</div><div class="line">            &#125;,</div><div class="line">            resolve: &#123;</div><div class="line">                extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.vue'</span>],</div><div class="line">                modulesDirectories: [<span class="string">'node_modules'</span>],</div><div class="line">                alias: &#123;</div><div class="line">                    vue: <span class="string">'vue/dist/vue.js'</span>, <span class="comment">// independent render,</span></div><div class="line">                    scss: path.resolve(__dirname, <span class="string">'./src/scss'</span>),</div><div class="line">                    mixins: path.resolve(__dirname, <span class="string">'src'</span>, <span class="string">'mixins'</span>),</div><div class="line">                    components: path.resolve(__dirname, <span class="string">'src'</span>, <span class="string">'components'</span>)</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="3-规划目录结构"><a href="#3-规划目录结构" class="headerlink" title="3.规划目录结构"></a>3.规划目录结构</h2><p>├── src/<br>│<br>├── test/<br>     └── coverage/<br>│   └── unit/<br>│       └── *.spec.js<br>└── karma.conf.js<br>测试的项目源代码主要处于src中。测试相关文件均放在 test/unit 文件夹下，各个组件的单元测试文件分别为 组件名.spec.js。coverage文件夹是运行命令后自动生成的覆盖率文件夹，它默认产生在项目目录下的，这里为了不影响项目代码结构，我把karma.config.js文件里的coverageReporter生成路径修改为了“test/coverage/”，让它在test文件下生成。</p>
+<h2 id="4-编写组件测试代码"><a href="#4-编写组件测试代码" class="headerlink" title="4.编写组件测试代码"></a>4.编写组件测试代码</h2><p>在编写测试代码前，简单介绍下测试框架mocha和断言chai。</p>
+<h3 id="Mocha"><a href="#Mocha" class="headerlink" title="Mocha"></a>Mocha</h3><p><a href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html</a><br>mocha编写的测试用例主要由describe和it组成。测试脚本里面应该包括一个或多个describe块，每个describe块应该包括一个或多个it块。 describe块称为”测试套件”（test suite），表示一组相关的测试。它是一个函数，第一个参数是测试套件的名称，第二个参数是一个实际执行的函数。 it块称为”测试用例”，表示一个单独的测试，是测试的最小单位。它也是一个函数，第一个参数是测试用例的名称，第二个参数是一个实际执行的函数。如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">describe(<span class="string">'new-thumbnail'</span>, () =&gt; &#123;</div><div class="line">    it(<span class="string">'create'</span>, done =&gt; &#123;</div><div class="line"></div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>由于Vue进行异步更新DOM的情况，一些依赖DOM更新结果的断言必须在 Vue.nextTick 回调中进行：并且需要在it语句传入done，在回调结束的时候执行done().如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'test computed'</span>, done =&gt; &#123;</div><div class="line">    Vue.nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">        expect(vm.visible).to.equal(<span class="literal">true</span>);</div><div class="line">        done()</div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>mocha在describe块之中，提供测试用例的四个钩子：before()、after()、beforeEach()和afterEach()。它们会在指定时间执行。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">describe(<span class="string">'hook'</span>, () =&gt; &#123;</div><div class="line">    before(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// 在本区块的所有测试用例之前执行</span></div><div class="line">    &#125;)</div><div class="line">    after(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// 在本区块的所有测试用例之后执行</span></div><div class="line">    &#125;)</div><div class="line">    beforeEach(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// 在本区块的每个测试用例之前执行</span></div><div class="line">    &#125;)</div><div class="line">    afterEach(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// 在本区块的每个测试用例之前执行</span></div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="Chai"><a href="#Chai" class="headerlink" title="Chai"></a>Chai</h3><p><a href="http://chaijs.com/api/" target="_blank" rel="external">http://chaijs.com/api/</a><br>所谓”断言”，就是判断源码的实际执行结果与预期结果是否一致，如果不一致就抛出一个错误。这里用的断言库是chai，其中有三个API expect/should/assert，比较常用的是expect。详细可以看chai的相关api。如下面的这句断言意思就是vm.visible的值应该是true。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">expect(vm.visible).to.equal(<span class="literal">true</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>主要就是在unit文件夹下建立对应组件的*.spec.js文件，并在该文件中写各种测试用例，开始时首先需要在文件头引入组件所引用的各种依赖，如组件中使用了element组件：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="keyword">import</span> ElementUI <span class="keyword">from</span> <span class="string">'element-ui'</span></div><div class="line">Vue.use(ElementUI);</div></pre></td></tr></table></figure></p>
+<p>1.一般组件的测试可以直接使用定义好的createTest工具函数（见5）来直接创建测试组件实例，然后就可以对实例进行模拟操作，断言其期望值是否达到预期。不符合的话，会在控制台输出相应的错误，从而了解到该方法不能达到预期，存在着问题。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">vm = createTest(NewThumbnail, <span class="literal">true</span>);</div><div class="line"></div><div class="line">describe(<span class="string">'测试组件detail.vue不涉及store的methods'</span>, () =&gt; &#123; </div><div class="line">    it(<span class="string">'test methods without store'</span>, done =&gt;&#123;</div><div class="line">        expect(<span class="literal">true</span>).to.equal(<span class="literal">false</span>);</div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p><img src="../images/error.png" alt="error"></p>
+<p>2.如果组件应用到store进行状态管理，则需要引入store文件，可在创建测试组件实例构造器Vue.extend时传入store，才能在测试实例中使用。在测试detail组件中，打开不同模块的详情都需要调用store里的 showDetail mutation，并传入不同的参数。为了能在测试不同详情信息的输入结果是否达到预期，我一般都选择在每个describe块的before钩子函数进行commint。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//构造一个传入store的vue组件构造函数</span></div><div class="line"><span class="keyword">var</span> ctsr=Vue.extend(&#123;</div><div class="line">    store</div><div class="line">&#125;)</div><div class="line"><span class="keyword">var</span> vm= <span class="keyword">new</span> ctsr(detail); </div><div class="line"></div><div class="line"><span class="comment">//moduleType:'program' </span></div><div class="line">describe(<span class="string">'moduleType为program时detail.vue methods'</span>, () =&gt; &#123; </div><div class="line">    before(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="comment">// 在本区块的所有测试用例之前执行</span></div><div class="line">        vm.$store.commit(<span class="string">'showDetail'</span>,&#123;</div><div class="line">            id:<span class="string">'program1'</span>,</div><div class="line">            rowData:&#123;<span class="string">'a'</span>: <span class="number">1</span>&#125;,</div><div class="line">            moduleType:<span class="string">'program'</span>,</div><div class="line">            hasButton:<span class="literal">true</span>,</div><div class="line">            processAuth:<span class="string">'va.video.programGetEvidence.search.detail.process'</span>,</div><div class="line">            createWritAuth:<span class="string">'va.video.programGetEvidence.search.detail.createWri'</span>,</div><div class="line">        &#125;)</div><div class="line">    &#125;);</div><div class="line">    ...</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>3.如测试的组件涉及到异步ajax请求，可以安装mockJs，使用mockJs来拦截请求，并返回一些模拟数据，来判断数据是否达到预期。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Mock.mock(<span class="string">"/hawkeye/va/video/programMonitor/processall"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="string">"code"</span>: <span class="number">0</span>,</div><div class="line">        <span class="string">"msg"</span>: <span class="string">"节目直接处理"</span>,</div><div class="line">        <span class="string">"data"</span>: &#123;</div><div class="line">          <span class="string">"status"</span>: <span class="number">0</span></div><div class="line">        &#125;</div><div class="line">    &#125; </div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>4.测试结果查看：测试结果主要在终端查看，可以看到相关的断言是否正确。如配置了coverage插件，则会在相应的目录下生产coverage文件夹，具体的目录结果如下：打开index.html文件即可查看到代码的覆盖率等相关信息。<br><img src="../images/success.png" alt="coverage"><br><img src="../images/file.png" alt="coverage"><br>但是我发现打开的index文件这里的detail.spec.js，默认是编译之后的文件，所以，测试覆盖率就是打包编译后的覆盖率，这并不是我想要的。<br><img src="../images/coverage1.png" alt="coverage"><br><img src="../images/coverage2.png" alt="coverage"><br>经过网上的查找之后，发现需要另外另外安装两个模块：sourcemap 与 isparta,去掉karma.comfig.js里面的preprocessors中的coverage设置，同时需要修改vue的js loader。<br>sourcemap 是资源定位的模块<br>isparta 计算测试覆盖率</p>
+<p>npm install –save-dev sourcemap isparta isparta-loader<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 预处理文件</span></div><div class="line"><span class="comment">// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor</span></div><div class="line">preprocessors: &#123;</div><div class="line">    <span class="string">'test/unit/**/*.spec.js'</span>:[<span class="string">'webpack'</span>]</div><div class="line">&#125;,</div><div class="line"></div><div class="line">vue: &#123;</div><div class="line">loaders: &#123;</div><div class="line">    js: <span class="string">'isparta-loader'</span>,</div><div class="line">...</div><div class="line">&#125;</div><div class="line">&#125;,</div><div class="line">isparta: &#123;</div><div class="line">    emBedSource: <span class="literal">true</span>,</div><div class="line">    noAutoWrap: <span class="literal">true</span>,</div><div class="line">    babel: &#123;</div><div class="line">        presets: [<span class="string">'es2015'</span>]</div><div class="line">    &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<p>再运行测试命令，这时打开index.html，显示如下：<br><img src="../images/coverage3.png" alt="coverage"><br><img src="../images/coverage4.png" alt="coverage"><br>detail.vue即是要测试的组件，该文件中代码部分按照“绿色”，“黄色”和“红色”进行分类。“绿色”表示没有静态错误的代码；“黄色”表示可能存在错误的代码，需要重新测试；“红色”表示肯定没有测试到的代码。这样，我可以集中精力编写“红色”代码测试，重点测试“黄色”代码。<br><img src="../images/code_yellow.png" alt="coverage"><br><img src="../images/code_red.png" alt="coverage"><br>5.在编写测试代码过程，可以直接参考了ElementUi组件库测试的一个工具函数做了简单的修改，在test文件夹新建了一个util.js的文件来存放几个工具函数，辅助生成测试组件实例。如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 创建一个 Vue 的实例对象</span></div><div class="line"><span class="comment"> * @param  &#123;Object|String&#125;  Compo   组件配置，可直接传 template</span></div><div class="line"><span class="comment"> * @param  &#123;Boolean=false&#125; mounted 是否添加到 DOM 上</span></div><div class="line"><span class="comment"> * @return &#123;Object&#125; vm</span></div><div class="line"><span class="comment"> */</span></div><div class="line">exports.createVue = <span class="function"><span class="keyword">function</span>(<span class="params">Compo, mounted = false</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(Compo) === <span class="string">'[object String]'</span>) &#123;</div><div class="line">    Compo = &#123; <span class="attr">template</span>: Compo &#125;;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Vue(Compo).$mount(mounted === <span class="literal">false</span> ? <span class="literal">null</span> : createElm());</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 创建一个测试组件实例</span></div><div class="line"><span class="comment"> * @link http://vuejs.org/guide/unit-testing.html#Writing-Testable-Components</span></div><div class="line"><span class="comment"> * @param  &#123;Object&#125;  Compo          - 组件对象</span></div><div class="line"><span class="comment"> * @param  &#123;Object&#125;  propsData      - props 数据</span></div><div class="line"><span class="comment"> * @param  &#123;Boolean=false&#125; mounted  - 是否添加到 DOM 上</span></div><div class="line"><span class="comment"> * @return &#123;Object&#125; vm</span></div><div class="line"><span class="comment"> */</span></div><div class="line">exports.createTest = <span class="function"><span class="keyword">function</span>(<span class="params">Compo, propsData = &#123;&#125;, mounted = false</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (propsData === <span class="literal">true</span> || propsData === <span class="literal">false</span>) &#123;</div><div class="line">    mounted = propsData;</div><div class="line">    propsData = &#123;&#125;;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">const</span> elm = createElm();</div><div class="line">  <span class="keyword">const</span> Ctor = Vue.extend(Compo);</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Ctor(&#123; propsData &#125;).$mount(mounted === <span class="literal">false</span> ? <span class="literal">null</span> : elm);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>通过 createTest 和 createVue 两个函数就可以很灵活的生成.vue这种单文件组件和自定义标签的组件的 Vue 实例，然后模拟各种操作来执行单元测试。另外还有模拟鼠标、键盘点击事件triggerEvent/triggerClick的也放在了util.js里。</p>
+<h2 id="5-结语"><a href="#5-结语" class="headerlink" title="5.结语"></a>5.结语</h2><p>由于本人第一次接触vue单元测试，在编写测试代码的过程中都是摸索着写的，有写的不对的地方，欢迎大家批评指正，多多指导。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/11/vue单元测试基本使用/" data-id="cj7g1g2ku0000s4tquaa83z0x" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/09/11/vue单元测试基本使用/">Vue单元测试基本使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
