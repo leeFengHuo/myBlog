@@ -6,7 +6,7 @@
 
 ```
 npm install hexo-cli -g
-git clone https://github.com/shuwo/myBlog.git
+git clone https://github.com/leeFengHuo/myBlog.git
 cd myBlog/blog/
 npm install
 ```
